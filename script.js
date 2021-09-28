@@ -83,12 +83,12 @@ function endGame() {
 let i = 0;
 
 do {
-  if (i <= 4) {
+  if (i < 5) {
     game();
   } else {
     endGame();
   }
 
   i++;
-} while (i <= 4)
+} while (i < 6)
 
