@@ -19,7 +19,7 @@ function playRound(playerSelection, computerSelection) {
   
   if (playerSelection === computerSelection) {
     roundWinner = `tie`;
-    showScore.textContent = `${playerSelection} vs ${computerSelection}. It's a tie! \n Score is You: ${playerScore}, Computer: ${computerScore}`;
+    showScore.textContent = `${playerSelection} vs ${computerSelection}.\r\n It's a tie! \r\n Score is You: ${playerScore}, Computer: ${computerScore}`;
   } else if (
     (playerSelection === "Rock" && computerSelection === "Scissors") ||
     (playerSelection === "Paper" && computerSelection === "Rock") ||
@@ -27,12 +27,12 @@ function playRound(playerSelection, computerSelection) {
   ) {
     roundWinner = `player`;
     playerScore++;
-    showScore.textContent = `${playerSelection} beats ${computerSelection}. You've won! \n Score is You: ${playerScore}, Computer: ${computerScore}`;
+    showScore.textContent = `${playerSelection} beats ${computerSelection}.\r\n You've won! \r\n Score is You: ${playerScore}, Computer: ${computerScore}`;
   } else {
     roundWinner = `computer`;
     computerScore++;
     showScore.textContent = 
-      `${playerSelection} loses to ${computerSelection}. You've lost! \n Score is You: ${playerScore}, Computer: ${computerScore}`
+      `${playerSelection} loses to ${computerSelection}.\r\n You've lost! \r\n Score is You: ${playerScore}, Computer: ${computerScore}`
     ;
   }
 }
@@ -88,9 +88,13 @@ const scissorsSelected = document.querySelector('#scissorsButton');
 
 function checkEndGame() {
   if (playerScore === 5) {
-    alert(`You've won the game! Score is You: ${playerScore}, Computer: ${computerScore}`);
+    alert(`You've won the game!\n Final score is - You: ${playerScore}, Computer: ${computerScore}`);
+    playerScore = 0;
+    computerScore = 0;
   } else if (computerScore === 5) {
-    alert(`You've lost the game! Score is You: ${playerScore}, Computer: ${computerScore}`);
+    alert(`You've lost the game!\n Final score is - You: ${playerScore}, Computer: ${computerScore}`);
+    playerScore = 0;
+    computerScore = 0;
   } 
 }
 
