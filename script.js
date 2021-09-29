@@ -1,7 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 let roundWinner = ``;
-const showScore = document.querySelector('#scoreArea');
+const showScore = document.querySelector("#scoreArea");
 
 // write function to choose computers move. Return random item from three items
 function computerPlay() {
@@ -16,7 +16,6 @@ function computerPlay() {
 }
 // one round of the game.
 function playRound(playerSelection, computerSelection) {
-  
   if (playerSelection === computerSelection) {
     roundWinner = `tie`;
     showScore.textContent = `${playerSelection} vs ${computerSelection}.\r\n It's a tie! \r\n Score is You: ${playerScore}, Computer: ${computerScore}`;
@@ -31,9 +30,7 @@ function playRound(playerSelection, computerSelection) {
   } else {
     roundWinner = `computer`;
     computerScore++;
-    showScore.textContent = 
-      `${playerSelection} loses to ${computerSelection}.\r\n You've lost! \r\n Score is You: ${playerScore}, Computer: ${computerScore}`
-    ;
+    showScore.textContent = `${playerSelection} loses to ${computerSelection}.\r\n You've lost! \r\n Score is You: ${playerScore}, Computer: ${computerScore}`;
   }
 }
 
@@ -60,42 +57,44 @@ function playRound(playerSelection, computerSelection) {
 //   displayWinner();
 // }
 
-const rockSelected = document.querySelector('#rockButton'); 
-(rockButton).addEventListener('click', () => {
+const rockSelected = document.querySelector("#rockButton");
+rockButton.addEventListener("click", () => {
   let computerSelection = computerPlay();
   computerPlay();
   playRound("Rock", computerSelection);
   checkEndGame();
 });
 
-const paperSelected = document.querySelector('#paperButton'); 
-(paperButton).addEventListener('click', () => {
+const paperSelected = document.querySelector("#paperButton");
+paperButton.addEventListener("click", () => {
   let computerSelection = computerPlay();
   computerPlay();
   playRound("Paper", computerSelection);
   checkEndGame();
 });
 
-const scissorsSelected = document.querySelector('#scissorsButton'); 
-(scissorsButton).addEventListener('click', () => {
+const scissorsSelected = document.querySelector("#scissorsButton");
+scissorsButton.addEventListener("click", () => {
   let computerSelection = computerPlay();
   computerPlay();
   playRound("Scissors", computerSelection);
   checkEndGame();
 });
 
-
-
 function checkEndGame() {
   if (playerScore === 5) {
-    alert(`You've won the game!\n Final score is - You: ${playerScore}, Computer: ${computerScore}`);
+    alert(
+      `You've won the game!\n Final score is - You: ${playerScore}, Computer: ${computerScore}`
+    );
     playerScore = 0;
     computerScore = 0;
   } else if (computerScore === 5) {
-    alert(`You've lost the game!\n Final score is - You: ${playerScore}, Computer: ${computerScore}`);
+    alert(
+      `You've lost the game!\n Final score is - You: ${playerScore}, Computer: ${computerScore}`
+    );
     playerScore = 0;
     computerScore = 0;
-  } 
+  }
 }
 
 // let i = 0;
@@ -109,4 +108,3 @@ function checkEndGame() {
 
 //   i++;
 // } while (i < 6)
-
