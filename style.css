@@ -138,8 +138,9 @@ button:hover {
   text-align: center;
   margin: 2%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   padding: 1%;
   white-space: pre-line;
 }
@@ -148,4 +149,23 @@ button:hover {
   display: flex;
   flex-direction: row-reverse;
   margin-right: 10px;
+}
+
+.chosenWeapon {
+  font-size: 25px;
+  animation-name: appearAnimation;
+  animation-duration: 400ms;
+}
+
+.currentScore {
+  font-size: 40px;
+  animation-name: appearAnimation;
+  animation-duration: 1s;
+}
+
+@keyframes appearAnimation {
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
+
+  
 }
